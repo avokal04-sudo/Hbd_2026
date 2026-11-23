@@ -1,99 +1,103 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="am">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090909">
-  <title>Warning! Birthday Criminal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>የልደት ፌስቲቫል 🎂</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
-<body class="roast-page">
+<body class="roast">
 
-  <nav class="navbar">
-    <a class="logo" href="index.html">BIRTHDAY.exe</a>
-    <span class="nav-status">SYSTEM ONLINE ●</span>
+  <div class="decoration">🎈</div>
+  <div class="decoration d2">🎊</div>
+  <div class="decoration d3">✨</div>
+  <div class="decoration d4">🎈</div>
+  <div class="decoration d5">⭐</div>
+
+  <nav class="nav">
+    <a class="brand" href="index.html">🎂 BIRTHDAY FEST</a>
+    <span>01 / 03</span>
   </nav>
 
-  <main class="hero">
-    <div class="eyebrow">⚠ CLASSIFIED FRIENDSHIP FILE #001</div>
+  <main class="container">
 
-    <h1>
-      HAPPY BIRTHDAY,
-      <span class="red-text">LEGEND?</span>
+    <div class="pill">🎉 ልዩ የልደት ቀን እትም 🎉</div>
+
+    <h1 class="big-title">
+      መልካም ልደት<br>
+      <span class="rainbow">የዛሬው ኮከብ!</span>
     </h1>
 
-    <p class="subtitle">
-      Before you celebrate, we need to discuss your behavior.
+    <p class="intro">
+      ዛሬ ለአንተ የተዘጋጀ ልዩ ቀን ነው።
+      ግን ከበዓሉ በፊት አንድ ትንሽ ጉዳይ አለን! 😂
     </p>
 
-    <div class="photo-frame">
-      <img src="assets/birthday-photo.jpg"
-           alt="Birthday legend"
-           class="friend-photo">
-      <span class="photo-label">SUBJECT UNDER INVESTIGATION</span>
+    <div class="photo-card">
+      <img src="assets/birthday-photo.jpg" alt="የልደት ባለቤት">
+      <div class="photo-caption">👑 የዛሬው የበዓሉ ባለቤት</div>
     </div>
 
-    <div class="roast-card">
-      <h2>THE OFFICIAL FRIENDSHIP REPORT</h2>
+    <section class="glass">
+      <h2>😂 የጓደኝነት ኦፊሴላዊ ሪፖርት</h2>
 
       <p>
-        There was a day when I thought I was the most confused
-        person in this world. Then you appeared.
-      </p>
-
-      <p>
-        Suddenly, my confidence increased. Not because I became
-        successful, but because I realized there are people
-        operating at your level.
+        አንተ የተፈጠርክበትን ቀን ስላየሁ ነው
+        እኔ በራሴ መተማመን የጨመረው።
+        ከዚያ በፊት እኔ የመጨረሻው ነኝ ብዬ
+        እጠረጥር ነበር። 😂
       </p>
 
       <p>
-        You are living proof that evolution sometimes takes
-        unexpected holidays.
+        አንተ ግን ስትመጣ የራሴን ደረጃ
+        በድጋሚ ገምግሜ እንደ ተራ ተራ ሰው
+        እንዳልሆንኩ ተረዳሁ።
       </p>
 
       <p>
-        Your brain has two modes: loading... and still loading.
-        Even Google needs a break after trying to understand you.
+        አንተ ስትናገር ጉግል እንኳን
+        መልስ ከመስጠቱ በፊት ትንሽ ማሰብ
+        ያስፈልገዋል።
       </p>
 
       <p>
-        If common sense were money, you would be asking for a loan.
+        የአንተ የአስተሳሰብ ፍጥነት በጣም ልዩ ነው፤
+        ሀሳብ ከመጣ በፊት እረፍት ይወስዳል። 🤣
       </p>
 
       <p>
-        Your talent for making simple things complicated deserves
-        international recognition.
+        አንዳንድ ጊዜ አንተን ለመረዳት
+        የተጠቃሚ መመሪያ መጽሐፍ ያስፈልጋል።
       </p>
 
-      <p class="final-roast">
-        But honestly, life would be boring without your nonsense.
-        Never change... actually, consider a software update.
+      <p class="highlight">
+        ግን እውነቱ አንተ ባትኖር እንዲህ
+        የምንስቅበት ብዙ ታሪክ ባልኖረን ነበር።
       </p>
+
+      <button class="btn" onclick="showRoast()">
+        አሁንስ ምን ይሆን? 😂
+      </button>
+
+      <p id="roastExtra" class="hidden">
+        የዛሬ ዜና፦ እድሜህ ጨመረ፤
+        ጥበብህ ግን አሁንም እየተጫነ ነው...
+        እባክህ ኢንተርኔት ፈልግ! 🤣
+      </p>
+    </section>
+
+    <div class="transition-message">
+      <h2>😂 በቃ! በቃ!</h2>
+      <p>ከቀልዱ በኋላ ግን እውነተኛውን ነገር እንነጋገር...</p>
+      <a class="btn" href="respect.html">ወደ ትክክለኛው መልእክት →</a>
     </div>
 
-    <button class="main-button" onclick="revealRoast()">
-      🔥 I CAN HANDLE MORE
-    </button>
-
-    <div id="extraRoast" class="hidden surprise-message">
-      BREAKING NEWS: Scientists have discovered that your age
-      increases every year, but your maturity is still buffering.
-      😂
-    </div>
-
-    <div class="next-section">
-      <p>Okay, enough humiliation. You deserve some respect.</p>
-      <a href="respect.html" class="main-button">
-        CONTINUE TO THE REAL TALK →
-      </a>
-    </div>
   </main>
 
-  <footer>BUILT WITH FRIENDSHIP, SARCASM & ZERO MERCY.</footer>
-
+  <footer>ከጓደኝነት ጋር፣ በቀልድ የተሞላ ቀን ❤️</footer>
 </body>
-        </html>
+  </html>
+    
         
