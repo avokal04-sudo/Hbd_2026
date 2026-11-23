@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#100d08">
+  <title>The Real Talk | Birthday</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="respect-page">
+
+  <nav class="navbar">
+    <a class="logo" href="index.html">THE REAL TALK</a>
+    <a href="arena.html" class="nav-link">THE ARENA →</a>
+  </nav>
+
+  <main class="respect-container">
+
+    <div class="eyebrow gold-text">A MESSAGE BEYOND THE JOKES</div>
+
+    <h1>
+      NOT EVERYONE IS
+      <span class="gold-text">ORDINARY.</span>
+    </h1>
+
+    <div class="respect-photo">
+      <img src="assets/birthday-photo.jpg" alt="Birthday celebration">
+    </div>
+
+    <article class="message-card">
+      <h2>Happy Birthday, My Friend.</h2>
+
+      <p>
+        Today is more than just another date on the calendar.
+        It is a reminder of another year of experiences,
+        lessons, opportunities, and growth.
+      </p>
+
+      <p>
+        I genuinely appreciate having you as a friend.
+        Not because you are perfect, but because every person
+        has something unique to contribute to the lives of others.
+      </p>
+
+      <p>
+        As you enter another year, I hope you become more
+        confident in your abilities, more disciplined in your
+        decisions, and more courageous when facing challenges.
+      </p>
+
+      <p>
+        Never measure your progress only by how far other
+        people have gone. Everyone has a different journey.
+        Focus on building your own.
+      </p>
+
+      <p>
+        Keep learning. Keep improving. Respect your time.
+        Choose your environment wisely, and never underestimate
+        the power of consistent effort.
+      </p>
+
+      <p>
+        I wish you good health, meaningful opportunities,
+        genuine happiness, financial stability, and success
+        in everything worthwhile that you pursue.
+      </p>
+
+      <p class="gold-text final-message">
+        May this new chapter bring out the best version of you.
+        Stay real, stay focused, and keep moving forward.
+      </p>
+
+      <h2 class="signature">RESPECT ALWAYS. 🤝</h2>
+    </article>
+
+    <div class="quote-card">
+      <p>
+        "Your future is built by the decisions you make
+        consistently, not just the wishes you make occasionally."
+      </p>
+    </div>
+
+    <a href="arena.html" class="main-button gold-button">
+      🎮 ENTER THE BIRTHDAY ARENA
+    </a>
+
+  </main>
+
+  <footer>GOOD FRIENDSHIP. GOOD MEMORIES. GREATER FUTURE.</footer>
+
+</body>
+</html>
