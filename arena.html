@@ -1,118 +1,107 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="am">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#100820">
-  <title>Birthday Arena | Game On</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>የልደት ፌስቲቫል 🎉</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
-<body class="arena-page">
+<body class="arena">
 
-  <nav class="navbar">
-    <a href="index.html" class="logo">BIRTHDAY ARENA</a>
-    <a href="respect.html" class="nav-link">← PREVIOUS PAGE</a>
+  <div class="decoration">🎈</div>
+  <div class="decoration d2">🎊</div>
+  <div class="decoration d3">🎂</div>
+
+  <nav class="nav">
+    <a href="index.html" class="brand">🎂 BIRTHDAY FEST</a>
+    <span>03 / 03</span>
   </nav>
 
-  <main class="arena-container">
+  <main class="container">
 
-    <div class="eyebrow">🎉 LEVEL UP! ANOTHER YEAR UNLOCKED</div>
+    <div class="pill">🎉 የበዓሉ መድረክ ተከፍቷል!</div>
 
-    <h1>WELCOME TO THE <span class="purple-text">ARENA</span></h1>
+    <h1 class="big-title">
+      የልደት<br>
+      <span class="rainbow">ፌስቲቫል!</span>
+    </h1>
 
-    <p class="subtitle">
-      No stress. No responsibilities. Just birthday energy.
+    <p class="intro">
+      ዛሬ የምታስብበት አንድ ነገር ብቻ ነው፤
+      መዝናናት፣ መሳቅና መደሰት! 🥳
     </p>
 
-    <section class="game-card">
-      <h2>🎯 GAME 01: WOULD YOU RATHER?</h2>
-      <p id="question">Loading your challenge...</p>
-      <div class="game-options">
-        <button onclick="chooseOption(1)" id="option1">Option A</button>
-        <button onclick="chooseOption(2)" id="option2">Option B</button>
+    <section class="glass game">
+      <div class="game-icon">🧠</div>
+      <h2>ጨዋታ 1: የአእምሮ ፈተና</h2>
+      <p id="question">12 ወራት ውስጥ ቢያንስ 28 ቀናት ያላቸው ስንት ናቸው?</p>
+
+      <div class="choices">
+        <button onclick="quiz(1)">1</button>
+        <button onclick="quiz(2)">6</button>
+        <button onclick="quiz(3)">12</button>
       </div>
-      <p id="gameResult" class="game-result"></p>
-      <button class="secondary-button" onclick="nextQuestion()">
-        NEXT CHALLENGE →
-      </button>
+      <p id="quizResult" class="result"></p>
     </section>
 
-    <section class="game-card">
-      <h2>🎡 GAME 02: SPIN THE BIRTHDAY WHEEL</h2>
-      <div class="wheel" id="wheel">🎁</div>
-      <button class="main-button" onclick="spinWheel()">
-        SPIN THE WHEEL
-      </button>
-      <p id="wheelResult" class="game-result">
-        Let's see your birthday challenge!
-      </p>
+    <section class="glass game">
+      <div class="game-icon">🎡</div>
+      <h2>ጨዋታ 2: የዕድል ጎማ</h2>
+      <div id="wheel">🎁</div>
+      <button class="btn" onclick="spin()">ጎማውን አሽከርክር!</button>
+      <p id="wheelResult" class="result">እድልህን ለማየት ተዘጋጅ!</p>
     </section>
 
-    <section class="game-card">
-      <h2>🧠 GAME 03: BIRTHDAY IQ TEST</h2>
-      <p>How many months have at least 28 days?</p>
-
-      <div class="game-options">
-        <button onclick="answerIQ(1)">1 month</button>
-        <button onclick="answerIQ(2)">6 months</button>
-        <button onclick="answerIQ(3)">12 months</button>
+    <section class="glass game">
+      <div class="game-icon">🤔</div>
+      <h2>ጨዋታ 3: የትኛውን ትመርጣለህ?</h2>
+      <p id="choiceQuestion">የትኛውን ትመርጣለህ?</p>
+      <div class="choices">
+        <button id="choiceA" onclick="pick(0)">በጣም ብዙ ገንዘብ 💰</button>
+        <button id="choiceB" onclick="pick(1)">ዓለምን መዞር 🌍</button>
       </div>
-
-      <p id="iqResult" class="game-result"></p>
+      <p id="choiceResult" class="result"></p>
+      <button class="btn secondary" onclick="nextChoice()">ቀጣይ ጥያቄ →</button>
     </section>
 
-    <section class="game-card">
-      <h2>🎵 THE BIRTHDAY SOUNDTRACK</h2>
-      <p>Play your special birthday music.</p>
-
-      <audio id="birthdayMusic" loop>
+    <section class="glass game">
+      <div class="game-icon">🎵</div>
+      <h2>የልደት ሙዚቃ</h2>
+      <p>የበዓሉን ድባብ በሙዚቃ አሳምር!</p>
+      <audio id="music" loop>
         <source src="assets/birthday-song.m4a" type="audio/mp4">
-        Your browser does not support this audio.
       </audio>
-
-      <button class="main-button" onclick="toggleMusic()">
-        ▶ PLAY / PAUSE MUSIC
-      </button>
-
-      <audio id="surpriseSound">
-        <source src="assets/surprise.oga" type="audio/ogg">
-      </audio>
+      <button class="btn" onclick="musicToggle()">▶ ሙዚቃ አጫውት / አቁም</button>
+      <p id="musicStatus" class="result">ሙዚቃው ገና አልተጀመረም።</p>
     </section>
 
-    <section class="game-card final-surprise">
-      <h2>🎁 THE FINAL SURPRISE</h2>
-      <p>
-        You survived the roast. You received respect.
-        Now you deserve a proper celebration.
-      </p>
+    <section class="glass game final">
+      <div class="game-icon">🎁</div>
+      <h2>የመጨረሻው ስጦታ</h2>
+      <p>እስከ መጨረሻው የደረስክ ጀግና ነህ!</p>
+      <button class="btn" onclick="openGift()">🎁 ስጦታውን ክፈት</button>
 
-      <button class="main-button" onclick="birthdaySurprise()">
-        OPEN YOUR BIRTHDAY GIFT 🎉
-      </button>
-
-      <div id="birthdayGift" class="hidden">
-        <h1>HAPPY BIRTHDAY! 🎂</h1>
+      <div id="gift" class="hidden">
+        <div class="cake">🎂</div>
+        <h1 class="rainbow">መልካም ልደት!!!</h1>
         <p>
-          Another year. Another opportunity.
-          More memories to create, more goals to achieve,
-          and more reasons to celebrate.
+          ይህ ቀን የደስታ፣ የሳቅና የተስፋ ቀን ይሁንልህ!
+          በሕይወትህ ብዙ የምትኮራባቸው ቀናት
+          እንዲኖሩህ እመኝልሃለሁ።
         </p>
-        <h2>ENJOY YOUR SPECIAL DAY! 🥳</h2>
+        <h2>🥳 ዛሬ ያንተ ቀን ነው!</h2>
+        <canvas id="confetti"></canvas>
       </div>
-
-      <canvas id="confettiCanvas"></canvas>
     </section>
 
-    <a href="index.html" class="main-button">
-      ↻ RESTART THE EXPERIENCE
-    </a>
+    <a href="index.html" class="btn">↻ ከመጀመሪያው ጀምር</a>
 
   </main>
 
-  <footer>END OF TRANSMISSION. SEE YOU NEXT BIRTHDAY.</footer>
-
+  <footer>የሳቅ፣ የደስታና የማይረሳ ትዝታ ቀን 🎉</footer>
 </body>
-      </html>
+        </html>
+
           
