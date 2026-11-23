@@ -166,4 +166,15 @@ function launchConfetti() {
 
 // INITIALIZE
 document.addEventListener("DOMContentLoaded", displayChoice);
+function playSurpriseSound() {
+    const sound = document.getElementById("surpriseSound");
+
+    if (sound) {
+        sound.currentTime = 0;
+
+        sound.play().catch(error => {
+            console.log("Audio playback error:", error);
+        });
+    }
+}
 
