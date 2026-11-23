@@ -1,187 +1,155 @@
 
-// ROAST PAGE
-function revealRoast() {
-  const message = document.getElementById("extraRoast");
+function showRoast() {
+  const message = document.getElementById("roastExtra");
   if (message) {
     message.classList.remove("hidden");
+    message.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 }
 
-// WOULD YOU RATHER GAME
-const questions = [
-  {
-    q: "Would you rather become a millionaire or travel the world?",
-    a: "Become a millionaire 💰",
-    b: "Travel the world 🌍"
-  },
-  {
-    q: "Would you rather read minds or see the future?",
-    a: "Read minds 🧠",
-    b: "See the future 🔮"
-  },
-  {
-    q: "Would you rather have unlimited food or unlimited money?",
-    a: "Unlimited food 🍕",
-    b: "Unlimited money 💵"
-  },
-  {
-    q: "Would you rather be famous or secretly wealthy?",
-    a: "Famous ⭐",
-    b: "Secretly wealthy 💎"
-  },
-  {
-    q: "Would you rather never sleep or never study again?",
-    a: "Never sleep 😴",
-    b: "Never study 📚"
+// GAME 1: IQ QUIZ
+function quiz(answer) {
+  const result = document.getElementById("quizResult");
+
+  if (answer === 3) {
+    result.textContent = "ትክክል! 12ቱም ወራት ቢያንስ 28 ቀናት አሏቸው! 🧠🎉";
+  } else {
+    result.textContent = "እንደገና አስብ! ሁሉም ወራት 28 ቀናት አሏቸው! 😂";
   }
-];
-
-let questionIndex = 0;
-
-function displayQuestion() {
-  const q = document.getElementById("question");
-  if (!q) return;
-
-  q.textContent = questions[questionIndex].q;
-  document.getElementById("option1").textContent =
-    questions[questionIndex].a;
-  document.getElementById("option2").textContent =
-    questions[questionIndex].b;
-
-  document.getElementById("gameResult").textContent = "";
 }
 
-function chooseOption(choice) {
-  const result = document.getElementById("gameResult");
-  if (!result) return;
-
-  result.textContent =
-    choice === 1
-      ? "Interesting choice! You know what you want! 😎"
-      : "Bold decision! Let's see where that takes you! 😂";
-}
-
-function nextQuestion() {
-  questionIndex = (questionIndex + 1) % questions.length;
-  displayQuestion();
-}
-
-// BIRTHDAY WHEEL
+// GAME 2: SPIN WHEEL
 const challenges = [
-  "Give yourself a birthday speech! 🎤",
-  "Tell your funniest memory! 😂",
-  "Dance for 10 seconds! 💃",
-  "Name three things you want to achieve! 🎯",
-  "Take a birthday selfie! 📸",
-  "Say one thing you are grateful for! 🙌",
-  "Challenge a friend to a game! 🎮"
+  "ለ10 ሰከንድ ዳንስ! 💃",
+  "ሶስት የወደፊት ግቦችህን ተናገር! 🎯",
+  "አስቂኝ ታሪክ አጫውት! 😂",
+  "የልደት ፎቶ አንሳ! 📸",
+  "ለጓደኛህ መልካም ምኞት አድርግ! 🤝",
+  "የምትወደውን ዘፈን ዘምር! 🎤",
+  "የዛሬውን ደስታ በሙሉ አጣጥም! 🥳"
 ];
 
-function spinWheel() {
+function spin() {
   const wheel = document.getElementById("wheel");
   const result = document.getElementById("wheelResult");
 
   if (!wheel || !result) return;
 
   wheel.classList.remove("spinning");
-
-  // Restart animation
   void wheel.offsetWidth;
   wheel.classList.add("spinning");
 
-  result.textContent = "The birthday wheel is spinning...";
+  result.textContent = "ዕድልህ እየተወሰነ ነው...";
 
   setTimeout(() => {
-    const random = Math.floor(Math.random() * challenges.length);
-    result.textContent = "YOUR CHALLENGE: " + challenges[random];
+    const index = Math.floor(Math.random() * challenges.length);
+    result.textContent = "🎉 ፈተናህ፦ " + challenges[index];
     wheel.classList.remove("spinning");
-  }, 1200);
+  }, 1400);
 }
 
-// BIRTHDAY IQ QUIZ
-function answerIQ(answer) {
-  const result = document.getElementById("iqResult");
-  if (!result) return;
+// GAME 3: WOULD YOU RATHER
+const choices = [
+  ["ብዙ ገንዘብ 💰", "ዓለምን መዞር 🌍"],
+  ["ታዋቂ መሆን ⭐", "በስውር ሀብታም መሆን 💎"],
+  ["የወደፊቱን ማየት 🔮", "የሰዎችን ሀሳብ ማወቅ 🧠"],
+  ["ያለ ገደብ ምግብ 🍕", "ያለ ገደብ ጉዞ ✈️"]
+];
 
-  if (answer === 3) {
-    result.textContent = "CORRECT! All 12 months have at least 28 days! 🧠";
-  } else {
-    result.textContent = "Not quite! Think carefully. Try again! 😂";
-  }
+let choiceIndex = 0;
+
+function displayChoice() {
+  const q = document.getElementById("choiceQuestion");
+  if (!q) return;
+
+  q.textContent = "የትኛውን ትመርጣለህ?";
+  document.getElementById("choiceA").textContent =
+    choices[choiceIndex][0];
+  document.getElementById("choiceB").textContent =
+    choices[choiceIndex][1];
+  document.getElementById("choiceResult").textContent = "";
 }
 
-// MUSIC PLAYER
-function toggleMusic() {
-  const music = document.getElementById("birthdayMusic");
+function pick(option) {
+  document.getElementById("choiceResult").textContent =
+    "ምርጫህ ተመዝግቧል! 😎 ምክንያቱንስ አብራራ!";
+}
+
+function nextChoice() {
+  choiceIndex = (choiceIndex + 1) % choices.length;
+  displayChoice();
+}
+
+// MUSIC
+function musicToggle() {
+  const music = document.getElementById("music");
+  const status = document.getElementById("musicStatus");
+
   if (!music) return;
 
   if (music.paused) {
-    music.play().catch(() => {
-      alert("Please tap play again to start the music.");
+    music.play().then(() => {
+      status.textContent = "🎵 ሙዚቃው እየተጫወተ ነው!";
+    }).catch(() => {
+      status.textContent = "ሙዚቃውን ለማጫወት የድምፅ ፋይሉን አረጋግጥ።";
     });
   } else {
     music.pause();
+    status.textContent = "ሙዚቃው ቆሟል።";
   }
 }
 
-// FINAL BIRTHDAY SURPRISE
-function birthdaySurprise() {
-  const gift = document.getElementById("birthdayGift");
+// FINAL GIFT
+function openGift() {
+  const gift = document.getElementById("gift");
   if (!gift) return;
 
   gift.classList.remove("hidden");
-
-  const sound = document.getElementById("surpriseSound");
-  if (sound) {
-    sound.currentTime = 0;
-    sound.play().catch(() => {});
-  }
-
   launchConfetti();
+
   gift.scrollIntoView({
     behavior: "smooth",
     block: "center"
   });
 }
 
-// CONFETTI ANIMATION
+// CONFETTI
 function launchConfetti() {
-  const canvas = document.getElementById("confettiCanvas");
+  const canvas = document.getElementById("confetti");
   if (!canvas) return;
 
   const ctx = canvas.getContext("2d");
   const rect = canvas.getBoundingClientRect();
 
-  const width = canvas.width = rect.width;
-  const height = canvas.height = rect.height;
+  canvas.width = rect.width;
+  canvas.height = rect.height;
 
-  const pieces = [];
-
-  for (let i = 0; i < 130; i++) {
-    pieces.push({
-      x: Math.random() * width,
-      y: -Math.random() * height,
-      size: Math.random() * 7 + 3,
-      speed: Math.random() * 4 + 2,
-      angle: Math.random() * 6,
-      color: ["#ffcc66", "#ff66cc", "#9e78ff", "#ffffff", "#55e6b0"][
-        Math.floor(Math.random() * 5)
-      ]
-    });
-  }
+  const pieces = Array.from({ length: 150 }, () => ({
+    x: Math.random() * canvas.width,
+    y: -Math.random() * canvas.height,
+    size: Math.random() * 7 + 3,
+    speed: Math.random() * 4 + 2,
+    rotation: Math.random() * 6,
+    color: ["#ffdc73", "#ff70c1", "#ffffff",
+            "#69e5ff", "#b99aff"][Math.floor(Math.random() * 5)]
+  }));
 
   let frame = 0;
 
   function animate() {
-    ctx.clearRect(0, 0, width, height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    pieces.forEach(piece => {
-      piece.y += piece.speed;
-      piece.angle += 0.08;
-      piece.x += Math.sin(piece.angle) * 1.5;
+    pieces.forEach(p => {
+      p.y += p.speed;
+      p.rotation += 0.1;
+      p.x += Math.sin(p.rotation) * 1.5;
 
-      ctx.fillStyle = piece.color;
-      ctx.fillRect(piece.x, piece.y, piece.size, piece.size);
+      ctx.fillStyle = p.color;
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rotation);
+      ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+      ctx.restore();
     });
 
     frame++;
@@ -189,7 +157,7 @@ function launchConfetti() {
     if (frame < 240) {
       requestAnimationFrame(animate);
     } else {
-      ctx.clearRect(0, 0, width, height);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
   }
 
@@ -197,7 +165,5 @@ function launchConfetti() {
 }
 
 // INITIALIZE
-document.addEventListener("DOMContentLoaded", () => {
-  displayQuestion();
-});
-  
+document.addEventListener("DOMContentLoaded", displayChoice);
+
